@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tập Viết Chữ Lớp 1 — Màu Tươi Sáng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* 🎨 Màu mới: tím đậm, hồng, xanh đậm */
+    :root{
+      --purple:#7c3aed;  /* tím đậm */
+      --pink:#ec4899;    /* hồng nổi */
+      --blue:#2563eb;    /* xanh đậm */
+      --card-bg:rgba(255,255,255,0.94);
+      --muted:#475569;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      color:#0f172a;
+    }
+
+    body{
+      background-image: url('https://img.pikbest.com/png-images/qiantu/cute-hand-drawn-cartoon-people-children-elementary-school-students-carrying-school-bags-school-season_2534754.png!w700wp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .site-wrap{min-height:100vh;background:rgba(255,255,255,0.9);}
+
+    header{
+      max-width:1200px;
+      margin:20px auto 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 20px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;}
+    .logo{
+      width:64px;height:64px;border-radius:14px;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-family:'Pacifico';font-size:34px;
+      box-shadow:0 8px 24px rgba(16,24,40,0.18);
+    }
+
+    .title{font-family:'Pacifico';font-size:20px;color:var(--purple);}
+    nav{display:flex;gap:12px;align-items:center;}
+
+    nav a{
+      color:#222;text-decoration:none;padding:8px 12px;
+      border-radius:10px;font-weight:600;
+      transition:all 0.2s ease;
+    }
+
+    nav a:hover{
+      background:linear-gradient(90deg,var(--pink),var(--blue));
+      color:white;
+    }
+
+    /* Hero */
+    .hero{
+      max-width:1100px;margin:28px auto;padding:40px 22px;
+      display:grid;grid-template-columns:1fr 460px;gap:24px;
+      align-items:center;
+    }
+
+    .hero-left{padding:20px;}
+    .hero h1{
+      font-family:'Pacifico';font-size:56px;margin:0 0 12px;
+      color:var(--purple);
+    }
+
+    .hero p{color:var(--muted);margin:0 0 18px;max-width:640px;}
+    .cta-group{display:flex;gap:12px;}
+
+    .btn{
+      padding:14px 20px;border-radius:30px;border:none;cursor:pointer;
+      font-weight:700;font-size:16px;
+      transition:transform 0.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px);}
+    .btn-primary{
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      color:white;box-shadow:0 10px 30px rgba(124,58,237,0.3);
+    }
+
+    .btn-ghost{
+      background:white;border:2px solid var(--purple);color:var(--purple);
+    }
+
+    /* mockup */
+    .mockup{
+      background:var(--card-bg);border-radius:18px;padding:18px;
+      box-shadow:0 10px 30px rgba(16,24,40,0.15);
+    }
+
+    .mockup h4{text-align:center;color:var(--pink);}
+    .mockup .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;
+    }
+
+    .cell{
+      background:linear-gradient(145deg,var(--blue),var(--purple));
+      border-radius:10px;padding:12px;text-align:center;color:white;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* features */
+    .features{
+      max-width:1100px;margin:20px auto;padding:26px 22px;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+    }
+
+    .feature{
+      background:linear-gradient(180deg,#fff,var(--card-bg));
+      border-radius:14px;padding:18px;text-align:center;
+      box-shadow:0 8px 24px rgba(124,58,237,0.1);
+      transition:all 0.2s ease;
+    }
+
+    .feature:hover{
+      transform:translateY(-5px);
+      background:linear-gradient(135deg,var(--pink),var(--blue));
+      color:white;
+    }
+
+    .feature h3{margin:12px 0 8px;color:var(--purple);}
+    .feature p{color:var(--muted);font-size:14px;}
+
+    /* roadmap */
+    .roadmap{
+      max-width:1100px;margin:28px auto;padding:26px 22px;
+      background:linear-gradient(135deg,#fdfbff,#fff);
+      border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .roadmap h2{text-align:center;color:var(--blue);}
+    .steps{
+      display:flex;gap:24px;justify-content:center;margin-top:18px;flex-wrap:wrap;
+    }
+
+    .step{
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      color:white;padding:18px;border-radius:12px;text-align:center;
+      box-shadow:0 8px 24px rgba(16,24,40,0.15);width:220px;
+    }
+
+    .step .num{
+      width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:var(--purple);
+      background:white;margin:0 auto 12px;
+    }
+
+    footer{
+      max-width:1200px;margin:30px auto;padding:22px;
+      text-align:center;color:#374151;
+    }
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.5);z-index:60;}
+    .modal.show{display:flex;}
+
+    .modal-card{
+      background:white;padding:26px;border-radius:14px;
+      max-width:420px;width:92%;
+      box-shadow:0 20px 50px rgba(2,6,23,0.3);
+    }
+
+    .form-group{display:flex;flex-direction:column;gap:10px;}
+    input[type=email],input[type=password]{
+      padding:12px;border-radius:10px;border:1px solid #ddd;
+    }
+
+    .gmail{
+      background:#4285f4;color:white;padding:10px 14px;
+      border:none;border-radius:10px;cursor:pointer;
+    }
+
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.features{grid-template-columns:1fr}}
+  </style>
+</head>
+
+<body>
+  <div class="site-wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <div class="title">Tập Viết Chữ Lớp 1</div>
+          <div style="font-size:12px;color:var(--muted);">Học viết chữ đẹp cùng các bạn nhỏ</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#features">Tính năng</a>
+        <a href="#roadmap">Lộ trình</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="#" onclick="openModal(event)" style="background:linear-gradient(90deg,var(--pink),var(--blue));padding:10px 14px;border-radius:14px;color:white;">Đăng nhập</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-left">
+          <h1>Tập Viết Chữ Lớp 1</h1>
+          <p>Chương trình luyện viết chữ đẹp cho học sinh lớp 1 — dễ học, vui nhộn và sinh động.</p>
+          <div class="cta-group">
+            <button class="btn btn-primary" onclick="scrollToSection('features')">Bắt đầu học</button>
+            <button class="btn btn-ghost" onclick="scrollToSection('about')">Giới thiệu</button>
+          </div>
+        </div>
+
+        <div class="mockup">
+          <h4>Bài tập luyện viết</h4>
+          <div class="grid">
+            <div class="cell">A<br><small>Nét cơ bản</small></div>
+            <div class="cell">B<br><small>Ghép chữ</small></div>
+            <div class="cell">C<br><small>Viết câu</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="feature"><div style="font-size:28px">✏️</div><h3>Luyện Viết</h3><p>Từng bước luyện viết chữ cái và câu ngắn.</p></div>
+        <div class="feature"><div style="font-size:28px">🎨</div><h3>Học Qua Trò Chơi</h3><p>Trò chơi viết chữ sinh động giúp tăng hứng thú học.</p></div>
+        <div class="feature"><div style="font-size:28px">🔒</div><h3>Bảo Mật</h3><p>Đăng nhập an toàn qua Gmail.</p></div>
+        <div class="feature"><div style="font-size:28px">📖</div><h3>Tài Liệu</h3><p>Bộ sưu tập bài tập luyện viết phong phú.</p></div>
+      </section>
+
+      <section id="roadmap" class="roadmap">
+        <h2>Lộ Trình Học</h2>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h4>Làm quen chữ</h4><p>Nhận biết chữ cái cơ bản.</p></div>
+          <div class="step"><div class="num">2</div><h4>Ghép từ</h4><p>Học ghép các chữ cái thành từ.</p></div>
+          <div class="step"><div class="num">3</div><h4>Viết câu</h4><p>Luyện viết câu hoàn chỉnh.</p></div>
+        </div>
+      </section>
+
+      <section id="about" style="text-align:center;padding:30px;">
+        <h3>Giới Thiệu Tác Giả</h3>
+        <p>Được phát triển bởi nhóm giáo viên Trường Đại học Tây Bắc — mang đến phương pháp luyện viết hiện đại, sinh động và hiệu quả.</p>
+      </section>
+
+      <section id="contact" style="text-align:center;padding:30px;">
+        <h3>Liên Hệ</h3>
+        <p>Địa chỉ: Đại học Tây Bắc, Sơn La</p>
+        <p>SĐT: 0337860906 | Email: <a href="mailto:minhyc071@gmail.com">minhyc071@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>© 2025 Tập Viết Chữ Lớp 1 — All rights reserved.</footer>
+
+    <!-- Modal đăng nhập -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <h3>Đăng nhập / Đăng ký</h3>
+        <div class="form-group">
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Mật khẩu">
+          <button class="btn btn-primary" onclick="fakeLogin()">Đăng nhập</button>
+          <div style="text-align:center;color:var(--muted)">Hoặc</div>
+          <button class="gmail" onclick="alert('Đăng ký bằng Gmail')">🔵 Đăng ký bằng Gmail</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    function openModal(e){
+      e.preventDefault();
+      document.getElementById('modal').classList.add('show');
+    }
+    function closeModal(){
+      document.getElementById('modal').classList.remove('show');
+    }
+    function fakeLogin(){
+      alert('Đăng nhập thành công!');
+      closeModal();
+    }
+  </script>
+</body>
+</html>
